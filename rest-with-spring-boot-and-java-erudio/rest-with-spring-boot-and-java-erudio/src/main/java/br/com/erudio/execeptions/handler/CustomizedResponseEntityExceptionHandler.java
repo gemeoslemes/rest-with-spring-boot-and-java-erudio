@@ -1,5 +1,6 @@
 package br.com.erudio.execeptions.handler;
 
+import br.com.erudio.execeptions.ExceptionDivisionZero;
 import br.com.erudio.execeptions.ExceptionResponse;
 import br.com.erudio.execeptions.UnsupportedMathOperationException;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,15 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
     @ExceptionHandler(UnsupportedMathOperationException.class)
     public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                new Date(),
+                ex.getMessage(),
+                request.getDescription(false));
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ExceptionDivisionZero.class)
+    public final ResponseEntity<ExceptionResponse> handerBadRequestDivisionZero(Exception ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 new Date(),
                 ex.getMessage(),
