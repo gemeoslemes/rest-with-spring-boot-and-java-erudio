@@ -7,7 +7,7 @@ import br.com.erudio.execeptions.RequiredObjectIsNotNullException;
 import br.com.erudio.execeptions.ResourceNotFoundException;
 import br.com.erudio.mapper.DozerMapper;
 import br.com.erudio.mapper.custom.PersonMapper;
-import br.com.erudio.model.Person;
+import br.com.erudio.model.person.Person;
 import br.com.erudio.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +26,7 @@ public class PersonService {
 
     private Logger logger = Logger.getLogger(PersonService.class.getName());
 
-    public List<PersonVO> findAll() {
+    public List<PersonVO>   findAll() {
         logger.info("Finding all people!");
         var persons = DozerMapper.parseListObjects(repository.findAll(), PersonVO.class);
         persons

@@ -2,7 +2,7 @@ package br.com.erudio.junittest.mockito.services;
 
 import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.execeptions.RequiredObjectIsNotNullException;
-import br.com.erudio.model.Person;
+import br.com.erudio.model.person.Person;
 import br.com.erudio.repositories.PersonRepository;
 import br.com.erudio.services.PersonService;
 import br.com.erudio.unittests.mapper.mocks.PersonMock;
