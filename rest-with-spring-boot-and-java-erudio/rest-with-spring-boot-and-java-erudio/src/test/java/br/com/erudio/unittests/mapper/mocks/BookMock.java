@@ -29,6 +29,7 @@ public class BookMock {
         for (int i = 0; i < 14; i++) {
             bookList.add(mockEntity(i));
         }
+        return bookList;
     }
 
     public Book mockEntity(Integer number) {
