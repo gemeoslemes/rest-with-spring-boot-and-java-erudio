@@ -140,6 +140,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Test updating book successfully")
     void update() {
         Book entity = bookMock.mockEntity(1);
         Book pesisted = entity;

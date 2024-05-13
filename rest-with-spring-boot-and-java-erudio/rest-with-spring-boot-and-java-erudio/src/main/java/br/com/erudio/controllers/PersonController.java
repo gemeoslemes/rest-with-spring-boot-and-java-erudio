@@ -70,7 +70,7 @@ public class PersonController {
     @Operation(summary = "Adds a new Person by passing in a JSON, XML or YML representation of the person!",
             tags = {"People"},
             responses = {
-                    @ApiResponse(description = "Success", responseCode = "200", content =
+                    @ApiResponse(description = "Success", responseCode = "201", content =
                     @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = PersonVO.class)
