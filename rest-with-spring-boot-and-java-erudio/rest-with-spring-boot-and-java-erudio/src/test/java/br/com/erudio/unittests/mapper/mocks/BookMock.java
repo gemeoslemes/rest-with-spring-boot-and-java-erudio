@@ -49,8 +49,10 @@ public class BookMock {
     public BookVO mockVO(Integer number) {
         BookVO book = new BookVO();
         book.setKey(number.longValue());
-        book.setTitle("Title :" + number);
-        book.setLaunchDate(new Date());
+        book.setTitle("Title : " + number);
+        LocalDate localDate = LocalDate.of(2022, 11, 11);
+        Date date = Date.from(localDate.atStartOfDay().toInstant(ZoneOffset.UTC));
+        book.setLaunchDate(date);
         book.setAuthor("Name Author: " + number);
         book.setPrice(number.doubleValue());
         return book;
